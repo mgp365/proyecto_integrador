@@ -58,9 +58,19 @@ if(ENABLE_TESTING)
     endfunction()
 
     # Archivos de pruebas
-    add_test_executable(test_pelicula1 test/test_pelicula1.cpp
-    pelicula.cpp
-    videos.cpp)
+    # Tests con GTest
+        add_executable(test_pelicula1
+            test/test_pelicula1.cpp
+            pelicula.cpp
+            videos.cpp
+        )
+        
+        target_link_libraries(test_pelicula1
+            gtest
+            gtest_main
+            pthread
+        )
+
 
     # Generar reportes de cobertura
     if (ENABLE_COVERAGE)
