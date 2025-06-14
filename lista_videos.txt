@@ -1,0 +1,5 @@
+182918,Interestelar,-1,Drama,129.3,4.3
+193948,Oppenherimer,-1,Drama,132.4,4.7
+123,Serie X,1,Drama,45.0,4.5
+1001,Peli A,-1,Acción,100.0,3.9
+248,Epsilon,1,Drama,349.2,4.9
