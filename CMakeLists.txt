@@ -14,9 +14,9 @@ include_directories(${CMAKE_SOURCE_DIR})
 # Archivos fuente principales
 set(SOURCES
         main.cpp
-        videos.h
-        pelicula.h
-        serie.h
+        videos.cpp
+        pelicula.cpp
+        serie.cpp
 )
 
 # Crear el ejecutable principal
@@ -58,7 +58,9 @@ if(ENABLE_TESTING)
     endfunction()
 
     # Archivos de pruebas
-    add_test_executable(test_pelicula1 test/test_pelicula1.cpp)
+    add_test_executable(test_pelicula1 test/test_pelicula1.cpp
+    pelicula.cpp
+    videos.cpp)
 
     # Generar reportes de cobertura
     if (ENABLE_COVERAGE)
