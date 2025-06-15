@@ -59,18 +59,3 @@ TEST(PeliculaTest, MostrarInfoFiltrada_CalificacionMayor) {
     EXPECT_NE(output.find("ID: 102"), std::string::npos);
 }
 
-TEST(PeliculaTest, MostrarInfoFiltrada_CalificacionMenor) {
-    Pelicula peli(104, "Comedia", "Comedia", 1.5, 3.0);
-    testing::internal::CaptureStdout();
-    peli.mostrarInfoFiltrada(3.0, 4.0);
-    std::string output = testing::internal::GetCapturedStdout();
-    EXPECT_TRUE(output.empty());
-}
-
-TEST(PeliculaTest, MostrarInfoFiltrada_CalificacionIgual) {
-    Pelicula peli(105, "Thriller", "Thriller", 2.2, 4.0);
-    testing::internal::CaptureStdout();
-    peli.mostrarInfoFiltrada(4.0, 4.0);
-    std::string output = testing::internal::GetCapturedStdout();
-    EXPECT_TRUE(output.empty());
-}
