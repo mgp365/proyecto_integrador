@@ -1,12 +1,9 @@
 /*
- * Copyright (c) 2024 [Mariana Guerrero Pérez - Tecnológico de Monterrey]
- * 
- * Descripción: Implementación de la clase Pelicula que hereda de Videos
- * Autor: [Mariana Guerrero Pérez]
- * Fecha de creación: [27/05/2025]
- * Última modificación: [16/06/2025]
- * 
- * Licencia: [Tipo de licencia, ej: MIT, GPL, etc.]
+ * Copyright (C) 2025 Tec de Monterrey
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
 #include "videos.h"
