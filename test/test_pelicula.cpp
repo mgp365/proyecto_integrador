@@ -49,13 +49,10 @@ TEST(PeliculaTest, GuardarEnArchivo) {
     EXPECT_NE(contenido.find("4.6"), std::string::npos);
 }
 
-TEST(PeliculaTest, MostrarInfoFiltrada_CalificacionMayor) {
-    Pelicula peli(102, "Drama", "Drama", 2.0, 4.2);
+TEST(PeliculaTest, FiltrarPorGenero_Drama) {
+    Pelicula peli(108, "Película Drama", "Drama", 2.5, 4.3);
     testing::internal::CaptureStdout();
-    peli.mostrarInfoFiltrada(4.2, 4.0);
+    peli.filtrarPorGenero("Drama");
     std::string output = testing::internal::GetCapturedStdout();
-    EXPECT_NE(output.find("Nombre: Drama"), std::string::npos);
-    EXPECT_NE(output.find("Género: Drama"), std::string::npos);
-    EXPECT_NE(output.find("ID: 102"), std::string::npos);
+    EXPECT_NE(output.find("Nombre: Película Drama"), std::string::npos);
 }
-
