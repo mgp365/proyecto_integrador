@@ -124,3 +124,28 @@ TEST(VideosTest, OperadorSalida_DistincionTipos) {
     delete pelicula;
     delete serie;
 }
+
+TEST(VideosTest, GuardarEnArchivo_Polimorfismo) {
+    Videos* pelicula = new Pelicula(313, "Save Test", "Romance", 2.1, 3.9);
+    Videos* serie = new Serie(314, "Save Serie", 4.4, "Fantasy", 1.3, 8);
+    
+    std::ostringstream archivoPeli, archivoSerie;
+    
+    pelicula->guardarEnArchivo(archivoPeli);
+    serie->guardarEnArchivo(archivoSerie);
+    
+    std::string contenidoPeli = archivoPeli.str();
+    std::string contenidoSerie = archivoSerie.str();
+    
+    // Verificar contenido de película
+    EXPECT_NE(contenidoPeli.find("313"), std::string::npos);
+    EXPECT_NE(contenidoPeli.find("Save Test"), std::string::npos);
+    
+    // Verificar contenido de serie (incluye episodio)
+    EXPECT_NE(contenidoSerie.find("314"), std::string::npos);
+    EXPECT_NE(contenidoSerie.find("Save Serie"), std::string::npos);
+    EXPECT_NE(contenidoSerie.find("8"), std::string::npos);
+    
+    delete pelicula;
+    delete serie;
+}
