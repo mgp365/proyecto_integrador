@@ -24,6 +24,12 @@ class Pelicula : public Videos {
     double obtenerCalificacion() override;
     void guardarEnArchivo(ostream &archivo) override;
     void mostrarInfoFiltrada(double calif, double c) override;
+
+    /**
+     * @brief Destructor de la clase Pelicula
+     * 
+     * Libera los recursos utilizados por la instancia de Pelicula
+     */
     ~Pelicula();
 };
 
