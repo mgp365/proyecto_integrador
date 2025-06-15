@@ -12,7 +12,7 @@ class Videos{
     double calificacion;
     public:
     Videos(int id, const string& nombre, const string& genero, float duracion,double calificacion);
-    virtual ~Videos(){};
+    virtual ~Videos();
     
     //virtual void leerArchivo();
     virtual double obtenerCalificacion();
