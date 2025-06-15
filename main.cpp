@@ -95,7 +95,7 @@ int main() {
                     cout << "Mostrar videos con calificación mayor a: ";
                     cin >> filtroVideos;
                     for (Videos* vid : listaVideos) {
-                        vid->mostrarInfoFiltrada(vid->obtenerCalificacion(), filtroVideos);
+                        vid->mostrarInfoFiltrada(vid->ObtenerCalificacion(), filtroVideos);
                     } break;
                 } else if(seleccionar == 2){
                     string filtroGenero;
@@ -117,8 +117,8 @@ int main() {
                 cin >> filtroEpisodio;
 
                 for (Serie* ser : listaSeries) {
-                    if (ser->obtenerSerie() == filtroSerie) {
-                        ser->mostrarInfoFiltrada(ser -> obtenerCalificacion(),filtroEpisodio);
+                    if (ser->ObtenerSerie() == filtroSerie) {
+                        ser->mostrarInfoFiltrada(ser -> ObtenerCalificacion(),filtroEpisodio);
                     }
                 }
                 break;
@@ -129,7 +129,7 @@ int main() {
                 cout << "Mostrar películas con calificación mayor a: ";
                 cin >> filtroPelicula;
                 for (Pelicula* pel : listaPeliculas) {
-                    pel->mostrarInfoFiltrada(pel->obtenerCalificacion(), filtroPelicula);
+                    pel->mostrarInfoFiltrada(pel->ObtenerCalificacion(), filtroPelicula);
                 }
                 break;
                 //calificar un video (pedir título a calificar y valor otorgado)
@@ -148,7 +148,7 @@ int main() {
 
                 if (op == 1) {
                     for (Videos* vid : listaPeliculas) {
-                        if (vid->obtenerTitulo() == titulo) {
+                        if (vid->ObtenerTitulo() == titulo) {
                             cout << "¿Cómo califica esta película del 1 al 5?: ";
                             cin >> puntuacion;
                             vid->agregarCalificacion(puntuacion, archivo);
@@ -163,7 +163,7 @@ int main() {
                     cin >> numEpisodio;
 
                     for (Serie* ser : listaSeries) {
-                        if (ser->obtenerTitulo() == titulo && ser->obtenerEpisodio() == numEpisodio) {
+                        if (ser->ObtenerTitulo() == titulo && ser->ObtenerEpisodio() == numEpisodio) {
                             cout << "¿Cómo califica este episodio del 1 al 5?: ";
                             cin >> puntuacion;
                             ser->agregarCalificacion(puntuacion, archivo);
