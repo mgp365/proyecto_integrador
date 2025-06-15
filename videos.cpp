@@ -1,4 +1,6 @@
 #include "videos.h"
+#include "serie.h"
+#include "pelicula.h"
 using namespace std;
 
 Videos::Videos(int id, const string& nombre, const string& genero, float duracion, double calificacion)
