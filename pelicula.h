@@ -20,6 +20,9 @@
  */
 class Pelicula : public Videos {
     public:
+    /**
+     * @brief Constructor de clase 
+     */
     Pelicula(int id, const string& nombre, const string& genero, float duracion, double calificacion);
     double obtenerCalificacion() override;
     void guardarEnArchivo(ostream &archivo) override;
