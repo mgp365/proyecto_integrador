@@ -64,13 +64,6 @@ if(ENABLE_TESTING)
             pelicula.cpp
             videos.cpp
         )
-        
-        target_link_libraries(test_pelicula1
-            gtest
-            gtest_main
-            pthread
-        )
-
 
     # Generar reportes de cobertura
     if (ENABLE_COVERAGE)
