@@ -218,3 +218,16 @@ TEST(VideosTest, FiltrarPorGenero_Drama) {
     EXPECT_TRUE(output.find("789") != std::string::npos);
     EXPECT_TRUE(output.find("4.9") != std::string::npos);
 }
+
+TEST(VideosTest, OperadorInsercion) {
+    std::ostringstream os;
+    Videos video(555, "Pulp Fiction", "Drama", 2.6, 4.7);
+    
+    os << video;
+    
+    std::string output = os.str();
+    EXPECT_TRUE(output.find("Pulp Fiction") != std::string::npos);
+    EXPECT_TRUE(output.find("Drama") != std::string::npos);
+    EXPECT_TRUE(output.find("555") != std::string::npos);
+    EXPECT_TRUE(output.find("4.7") != std::string::npos);
+}
