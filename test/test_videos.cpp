@@ -50,3 +50,16 @@ TEST(VideosTest, DestructorVirtual) {
     }
     EXPECT_TRUE(true);
 }
+
+TEST(VideosTest, MostrarInfoFiltrada_Pelicula) {
+    Videos* pelicula = new Pelicula(311, "Filter Test", "Horror", 1.8, 4.3);
+    
+    testing::internal::CaptureStdout();
+    pelicula->mostrarInfoFiltrada(4.3, 4.0);
+    std::string output = testing::internal::GetCapturedStdout();
+    
+    EXPECT_NE(output.find("Nombre: Filter Test"), std::string::npos);
+    EXPECT_NE(output.find("Género: Horror"), std::string::npos);
+    
+    delete pelicula;
+}
