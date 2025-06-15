@@ -13,6 +13,8 @@ class Serie : public Videos {
     void mostrarInfoFiltrada(double calif, double c) override;
     virtual string obtenerSerie();
     virtual int obtenerEpisodio() const;
+
+    ~Serie();
 };
 
 #endif
