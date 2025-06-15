@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../pelicula.h"
+#include "pelicula.h"
 
 TEST(PeliculaTest, ObtenerCalificacion) {
     Pelicula peli(101, "Interestelar", "Sci-Fi", 2.5, 4.5);
