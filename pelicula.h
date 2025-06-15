@@ -1,6 +1,12 @@
-/*
- * Copyright (c) 2024 Mariana Guerrero Pérez
- * Tecnológico de Monterrey
+/**
+ * @file pelicula.h
+ * @brief Header file for video processing functions.
+ * 
+ * This file contains declarations for functions used to load, play, and stop videos.
+ * 
+ * @author Mariana Guerrero Pérez
+ * @date 2024
+ * @copyright (c) 2024 Mariana Guerrero Pérez, Tecnológico de Monterrey
  */
 
 #ifndef PELICULA_H
