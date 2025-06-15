@@ -30,7 +30,7 @@ TEST(VideosTest, AgregarCalificacion_Pelicula) {
     Videos* pelicula = new Pelicula(305, "Test", "Acción", 2.0, 4.0);
     std::ostringstream archivo;
     
-    pelicula->agregarCalificacion(6.0, archivo);
+    pelicula->AgregarCalificacion(6.0, archivo);
     EXPECT_DOUBLE_EQ(pelicula->ObtenerCalificacion(), 5.0); // (4.0 + 6.0) / 2
     
     delete pelicula;
