@@ -162,3 +162,17 @@ TEST(VideosTest, MostrarInfoFiltrada_Serie) {
     
     delete serie;
 }
+
+TEST(VideosTest, Constructor) {
+    Videos video(101, "Avatar", "Acción", 2.5, 4.8);
+    EXPECT_EQ(video.obtenerTitulo(), "Avatar");
+    EXPECT_DOUBLE_EQ(video.obtenerCalificacion(), 4.8);
+}
+
+TEST(VideosTest, AgregarCalificacion) {
+    std::ostringstream archivo;
+    Videos video(1, "Titanic", "Romance", 3.2, 4.0);
+    
+    video.agregarCalificacion(5.0, archivo);
+    EXPECT_DOUBLE_EQ(video.obtenerCalificacion(), 4.5); // (4.0 + 5.0) / 2
+}
