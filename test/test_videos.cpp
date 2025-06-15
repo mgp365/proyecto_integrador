@@ -176,3 +176,19 @@ TEST(VideosTest, AgregarCalificacion) {
     video.agregarCalificacion(5.0, archivo);
     EXPECT_DOUBLE_EQ(video.obtenerCalificacion(), 4.5); // (4.0 + 5.0) / 2
 }
+
+TEST(VideosTest, MostrarInfoFiltrada_Mayor) {
+    std::ostringstream buffer;
+    std::streambuf* old = std::cout.rdbuf(buffer.rdbuf());
+    
+    Videos video(123, "Avengers", "Acción", 2.5, 4.8);
+    video.mostrarInfoFiltrada(4.8, 4.5); // calif > c
+    
+    std::cout.rdbuf(old);
+    
+    std::string output = buffer.str();
+    EXPECT_TRUE(output.find("Avengers") != std::string::npos);
+    EXPECT_TRUE(output.find("Acción") != std::string::npos);
+    EXPECT_TRUE(output.find("123") != std::string::npos);
+    EXPECT_TRUE(output.find("4.8") != std::string::npos);
+}
