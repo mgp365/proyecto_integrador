@@ -1,5 +1,5 @@
 /**
- * @file videos.h
+ * @file series.h
  * @brief Header file for video processing functions.
  * 
  * This file contains declarations for functions used to load, play, and stop videos.
