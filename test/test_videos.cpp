@@ -101,3 +101,15 @@ TEST(VideosTest, AgregarCalificacion_Multiple) {
     
     delete video;
 }
+
+TEST(VideosTest, FiltrarPorGenero_NoCoincide) {
+    Videos* pelicula = new Pelicula(310, "Acción Movie", "Acción", 2.0, 4.1);
+    
+    testing::internal::CaptureStdout();
+    pelicula->filtrarPorGenero("Drama");
+    std::string output = testing::internal::GetCapturedStdout();
+    
+    EXPECT_TRUE(output.empty());
+    
+    delete pelicula;
+}
