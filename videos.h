@@ -3,7 +3,7 @@
 
 #include <iostream>
 using namespace std;
-class Serie;
+
 class Videos{
     protected:
     int id;
