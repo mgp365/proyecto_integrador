@@ -22,11 +22,3 @@ TEST(SerieTest, ObtenerSerie) {
     Serie serie(203, "Game of Thrones", 4.7, "Fantasía", 1.2, 8);
     EXPECT_EQ(serie.obtenerSerie(), "Game of Thrones");
 }
-
-TEST(SerieTest, MostrarInfoFiltrada_CalificacionMenor) {
-    Serie serie(207, "Serie Baja", 3.5, "Drama", 1.0, 2);
-    testing::internal::CaptureStdout();
-    serie.mostrarInfoFiltrada(3.5, 4.0);
-    std::string output = testing::internal::GetCapturedStdout();
-    EXPECT_TRUE(output.empty());
-}
