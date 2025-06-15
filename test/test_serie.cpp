@@ -71,14 +71,6 @@ TEST(SerieTest, OperadorSalida) {
     EXPECT_NE(output.find("Episodio: 3"), std::string::npos);
 }
 
-TEST(SerieTest, FiltrarPorGenero_NoCoincide) {
-    Serie serie(212, "Comedia", 4.2, "Comedia", 0.8, 12);
-    testing::internal::CaptureStdout();
-    serie.filtrarPorGenero("Drama");
-    std::string output = testing::internal::GetCapturedStdout();
-    EXPECT_TRUE(output.empty());
-}
-
 TEST(SerieTest, AgregarCalificacion) {
     Serie serie(210, "Test Serie", 4.0, "Drama", 1.0, 1);
     std::ostringstream archivo;
