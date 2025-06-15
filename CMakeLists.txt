@@ -59,7 +59,12 @@ if(ENABLE_TESTING)
 
     # Archivos de pruebas
     # Tests con GTest
-         add_test_executable(test_pelicula1 test/test_pelicula1.cpp)
+         add_executable(test_pelicula1
+            test/test_pelicula1.cpp
+            pelicula.cpp
+            serie.cpp
+            videos.cpp
+        )
 
     # Generar reportes de cobertura
     if (ENABLE_COVERAGE)
