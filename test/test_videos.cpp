@@ -149,3 +149,16 @@ TEST(VideosTest, GuardarEnArchivo_Polimorfismo) {
     delete pelicula;
     delete serie;
 }
+
+TEST(VideosTest, MostrarInfoFiltrada_Serie) {
+    Videos* serie = new Serie(312, "Serie Filter", 4.6, "Thriller", 1.2, 6);
+    
+    testing::internal::CaptureStdout();
+    serie->mostrarInfoFiltrada(4.6, 4.0);
+    std::string output = testing::internal::GetCapturedStdout();
+    
+    EXPECT_NE(output.find("Nombre: Serie Filter"), std::string::npos);
+    EXPECT_NE(output.find("Número de episodio: 6"), std::string::npos);
+    
+    delete serie;
+}
