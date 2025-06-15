@@ -101,3 +101,26 @@ TEST(VideosTest, AgregarCalificacion_Multiple) {
     
     delete video;
 }
+
+TEST(VideosTest, OperadorSalida_DistincionTipos) {
+    Videos* pelicula = new Pelicula(315, "Output Movie", "Western", 2.4, 4.0);
+    Videos* serie = new Serie(316, "Output Series", 3.8, "Mystery", 1.1, 7);
+    
+    std::ostringstream osPeli, osSerie;
+    
+    osPeli << *pelicula;
+    osSerie << *serie;
+    
+    std::string outputPeli = osPeli.str();
+    std::string outputSerie = osSerie.str();
+    
+    // Película no debe tener información de episodio
+    EXPECT_EQ(outputPeli.find("Episodio:"), std::string::npos);
+    
+    // Serie debe tener información de episodio
+    EXPECT_NE(outputSerie.find("Episodio:"), std::string::npos);
+    EXPECT_NE(outputSerie.find("7"), std::string::npos);
+    
+    delete pelicula;
+    delete serie;
+}
