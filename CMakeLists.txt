@@ -59,7 +59,7 @@ if(ENABLE_TESTING)
 
     # Archivos de pruebas
     # Tests con GTest
-         add_executable(test_pelicula1
+         add_test_executable(test_pelicula1
             test/test_pelicula1.cpp
             #pelicula.cpp
             #serie.cpp
