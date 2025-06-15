@@ -4,9 +4,6 @@
 #include "pelicula.h"
 #include "serie.h"
 
-// Usamos las clases derivadas para probar la funcionalidad de la clase base Videos
-// ya que Videos es una clase base con métodos virtuales
-
 TEST(VideosTest, PolimorfismoObtenerCalificacion) {
     Videos* pelicula = new Pelicula(301, "Test Movie", "Acción", 2.0, 4.0);
     Videos* serie = new Serie(302, "Test Series", 3.5, "Thriller", 1.5, 3);
@@ -191,4 +188,33 @@ TEST(VideosTest, MostrarInfoFiltrada_Mayor) {
     EXPECT_TRUE(output.find("Acción") != std::string::npos);
     EXPECT_TRUE(output.find("123") != std::string::npos);
     EXPECT_TRUE(output.find("4.8") != std::string::npos);
+}
+
+TEST(VideosTest, MostrarInfoFiltrada_Menor) {
+    std::ostringstream buffer;
+    std::streambuf* old = std::cout.rdbuf(buffer.rdbuf());
+    
+    Videos video(456, "Batman", "Acción", 2.2, 3.5);
+    video.mostrarInfoFiltrada(3.5, 4.0);
+    
+    std::cout.rdbuf(old);
+    
+    std::string output = buffer.str();
+    EXPECT_TRUE(output.empty());
+}
+
+TEST(VideosTest, FiltrarPorGenero_Drama) {
+    std::ostringstream buffer;
+    std::streambuf* old = std::cout.rdbuf(buffer.rdbuf());
+    
+    Videos video(789, "Forrest Gump", "Drama", 2.3, 4.9);
+    video.filtrarPorGenero("Drama");
+    
+    std::cout.rdbuf(old);
+    
+    std::string output = buffer.str();
+    EXPECT_TRUE(output.find("Forrest Gump") != std::string::npos);
+    EXPECT_TRUE(output.find("Drama") != std::string::npos);
+    EXPECT_TRUE(output.find("789") != std::string::npos);
+    EXPECT_TRUE(output.find("4.9") != std::string::npos);
 }
