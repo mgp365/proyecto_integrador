@@ -56,3 +56,16 @@ TEST(PeliculaTest, FiltrarPorGenero_Drama) {
     std::string output = testing::internal::GetCapturedStdout();
     EXPECT_NE(output.find("Nombre: Película Drama"), std::string::npos);
 }
+
+TEST(PeliculaTest, OperadorInsercion) {
+    std::ostringstream os;
+    Pelicula peli(777, "Gladiator", "Acción", 2.5, 4.6);
+    
+    os << peli;
+    
+    std::string output = os.str();
+    EXPECT_TRUE(output.find("Gladiator") != std::string::npos);
+    EXPECT_TRUE(output.find("Acción") != std::string::npos);
+    EXPECT_TRUE(output.find("777") != std::string::npos);
+    EXPECT_TRUE(output.find("4.6") != std::string::npos);
+}
