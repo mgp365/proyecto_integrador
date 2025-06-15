@@ -82,3 +82,8 @@ TEST(SerieTest, EpisodiosCero) {
     Serie serie(213, "Nueva Serie", 3.8, "Sci-Fi", 1.5, 0);
     EXPECT_EQ(serie.obtenerEpisodio(), 0);
 }
+
+TEST(SerieTest, EpisodiosNegativos) {
+    Serie serie(214, "Serie Negativa", 4.0, "Horror", 1.0, -1);
+    EXPECT_EQ(serie.obtenerEpisodio(), -1);
+}
