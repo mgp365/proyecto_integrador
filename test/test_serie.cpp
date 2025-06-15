@@ -49,3 +49,11 @@ TEST(SerieTest, MostrarInfoFiltrada_CalificacionMayor) {
     EXPECT_NE(output.find("ID: 206"), std::string::npos);
     EXPECT_NE(output.find("Calificación: 4.9"), std::string::npos);
 }
+
+TEST(SerieTest, MostrarInfoFiltrada_CalificacionMenor) {
+    Serie serie(207, "Serie Baja", 3.5, "Drama", 1.0, 2);
+    testing::internal::CaptureStdout();
+    serie.mostrarInfoFiltrada(3.5, 4.0);
+    std::string output = testing::internal::GetCapturedStdout();
+    EXPECT_TRUE(output.empty());
+}
