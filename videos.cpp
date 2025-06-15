@@ -42,7 +42,7 @@ ostream& operator << (ostream& os, const Videos& vid){
     os << "Nombre: " << vid.nombre << ". Género: " << vid.genero << ". ID: " << vid.id << ". Calificación: " << vid.calificacion;
     
     if (ptrSerie) {
-        os << ". Episodio: " << ptrSerie->obtenerEpisodio();
+        os << ". Episodio: " << ptrSerie->ObtenerEpisodio();
     }
 
     return os;
