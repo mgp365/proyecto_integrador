@@ -4,7 +4,7 @@
 #include "videos.h"
 
 class Serie : public Videos {
-    private:
+    protected:
     int episodio;
     public:
     Serie(int id, const string& nombre, double calificacion, const string& genero, float duracion,int episodio);
