@@ -1,3 +1,14 @@
+/*
+ * Copyright (c) 2024 [Mariana Guerrero Pérez - Tecnológico de Monterrey]
+ * 
+ * Descripción: Implementación de la clase Pelicula que hereda de Videos
+ * Autor: [Mariana Guerrero Pérez]
+ * Fecha de creación: [27/05/2025]
+ * Última modificación: [16/06/2025]
+ * 
+ * Licencia: [Tipo de licencia, ej: MIT, GPL, etc.]
+ */
+
 #include <iostream>
 #include "serie.h"
 using namespace std;
