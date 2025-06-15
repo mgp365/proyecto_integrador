@@ -62,7 +62,7 @@ if(ENABLE_TESTING)
          add_test_executable(test_pelicula1
             test/test_pelicula1.cpp
             pelicula.cpp
-            serie.cpp
+            #serie.cpp
             videos.cpp
         )
 
