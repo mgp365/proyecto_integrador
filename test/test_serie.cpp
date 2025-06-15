@@ -87,3 +87,11 @@ TEST(SerieTest, EpisodiosNegativos) {
     Serie serie(214, "Serie Negativa", 4.0, "Horror", 1.0, -1);
     EXPECT_EQ(serie.obtenerEpisodio(), -1);
 }
+
+TEST(SerieTest, FiltrarPorGenero_Drama) {
+    Serie serie(211, "Serie Drama", "Drama", 4.5, "Drama", 1.0, 7);
+    testing::internal::CaptureStdout();
+    serie.filtrarPorGenero("Drama");
+    std::string output = testing::internal::GetCapturedStdout();
+    EXPECT_NE(output.find("Nombre: Serie Drama"), std::string::npos);
+}
