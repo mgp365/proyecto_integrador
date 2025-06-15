@@ -18,7 +18,7 @@ void Pelicula::guardarEnArchivo(ostream &archivo){
     archivo << id << "," << nombre << "," << genero << "," << duracion << "," << calificacion << endl;
 }
 
-double Pelicula::obtenerCalificacion(){
+double Pelicula::ObtenerCalificacion(){
     return calificacion;
 }
 

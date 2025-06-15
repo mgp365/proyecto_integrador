@@ -68,7 +68,7 @@ class Videos{
      * @brief Obtiene la calificación del video
      * @return double Calificación
      */
-    virtual double obtenerCalificacion();
+    virtual double ObtenerCalificacion();
     /**
      * @brief Guarda info de video en archivo
      * 
@@ -90,7 +90,7 @@ class Videos{
     /**
      * @brief Obtiene título del video
      */
-    virtual string obtenerTitulo();
+    virtual string ObtenerTitulo();
     /**
      * @brief Operador de inserción << para mostrar información del video
      * 

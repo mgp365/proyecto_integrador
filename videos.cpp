@@ -15,8 +15,8 @@ Videos::Videos(int id, const string& nombre, const string& genero, float duracio
 Videos::~Videos() = default;
 
 // videos.h
-double Videos::obtenerCalificacion() { return calificacion; }
-string Videos::obtenerTitulo(){return nombre;}
+double Videos::ObtenerCalificacion() { return calificacion; }
+string Videos::ObtenerTitulo(){return nombre;}
 
 void Videos::guardarEnArchivo(ostream &archivo){}
 

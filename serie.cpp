@@ -17,7 +17,7 @@ void Serie::guardarEnArchivo(ostream &archivo){
     archivo << id << "," << nombre << "," << episodio << "," << genero << "," << duracion << "," << calificacion << endl;
 }
 
-double Serie::obtenerCalificacion(){
+double Serie::ObtenerCalificacion(){
     return calificacion;
 }
 
@@ -27,15 +27,15 @@ void Serie::mostrarInfoFiltrada(double calif, double c){
     }
 }
 
-string Serie::obtenerSerie(){
+string Serie::ObtenerSerie(){
     return nombre;
 }
 
-int Serie::obtenerEpisodio() const{
+int Serie::ObtenerEpisodio() const{
     return episodio;
 }
 
 ostream& operator<<(ostream& os, const Serie& serie) {
-    os << static_cast<const Videos&>(serie) << ". Episodio: " << serie.obtenerEpisodio() << endl;
+    os << static_cast<const Videos&>(serie) << ". Episodio: " << serie.ObtenerEpisodio() << endl;
     return os;
 }

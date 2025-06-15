@@ -26,7 +26,7 @@ class Serie : public Videos {
     /**
      * @brief Obtener la calificación
      */
-    double obtenerCalificacion() override;
+    double ObtenerCalificacion() override;
     /**
      * @brief Guardar datos en el archivo
      */
@@ -38,11 +38,11 @@ class Serie : public Videos {
     /**
      * @brief Obtener serie
      */
-    virtual string obtenerSerie();
+    virtual string ObtenerSerie();
     /**
      * @brief Obtener episodio
      */
-    virtual int obtenerEpisodio() const;
+    virtual int ObtenerEpisodio() const;
 
     /**
      * @brief Destructor de Pelicula
