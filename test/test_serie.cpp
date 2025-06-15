@@ -70,3 +70,10 @@ TEST(SerieTest, OperadorSalida) {
     EXPECT_NE(output.find("Calificación: 4.3"), std::string::npos);
     EXPECT_NE(output.find("Episodio: 3"), std::string::npos);
 }
+
+TEST(SerieTest, AgregarCalificacion) {
+    Serie serie(210, "Test Serie", 4.0, "Drama", 1.0, 1);
+    std::ostringstream archivo;
+    serie.agregarCalificacion(6.0, archivo);
+    EXPECT_DOUBLE_EQ(serie.obtenerCalificacion(), 5.0); // (4.0 + 6.0) / 2
+}
