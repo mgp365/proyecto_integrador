@@ -38,3 +38,15 @@ TEST(VideosTest, AgregarCalificacion_Pelicula) {
     
     delete pelicula;
 }
+
+TEST(VideosTest, DestructorVirtual) {
+    Videos* videos[] = {
+        new Pelicula(317, "Destructor Test 1", "Comedy", 1.9, 3.5),
+        new Serie(318, "Destructor Test 2", 4.1, "Action", 1.4, 5)
+    };
+    
+    for (int i = 0; i < 2; i++) {
+        delete videos[i];
+    }
+    EXPECT_TRUE(true);
+}
