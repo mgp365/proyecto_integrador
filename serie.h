@@ -9,8 +9,14 @@
 
 #include "videos.h"
 
+/**
+ * @brief Clase que representa una serie
+ */
 class Serie : public Videos {
     protected:
+    /**
+     * @brief variable episodio
+     */
     int episodio;
     public:
     Serie(int id, const string& nombre, double calificacion, const string& genero, float duracion,int episodio);
@@ -20,6 +26,9 @@ class Serie : public Videos {
     virtual string obtenerSerie();
     virtual int obtenerEpisodio() const;
 
+    /**
+     * @brief Destructor de Pelicula
+     */
     ~Serie();
 };
 
