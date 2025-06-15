@@ -36,3 +36,16 @@ TEST(SerieTest, GuardarEnArchivo) {
     EXPECT_NE(contenido.find("0.5"), std::string::npos);
     EXPECT_NE(contenido.find("4.1"), std::string::npos);
 }
+
+TEST(SerieTest, MostrarInfoFiltrada_CalificacionMayor) {
+    Serie serie(206, "Breaking Bad", 4.9, "Drama", 1.0, 5);
+    testing::internal::CaptureStdout();
+    serie.mostrarInfoFiltrada(4.9, 4.5);
+    std::string output = testing::internal::GetCapturedStdout();
+    
+    EXPECT_NE(output.find("Nombre: Breaking Bad"), std::string::npos);
+    EXPECT_NE(output.find("Número de episodio: 5"), std::string::npos);
+    EXPECT_NE(output.find("Género: Drama"), std::string::npos);
+    EXPECT_NE(output.find("ID: 206"), std::string::npos);
+    EXPECT_NE(output.find("Calificación: 4.9"), std::string::npos);
+}
