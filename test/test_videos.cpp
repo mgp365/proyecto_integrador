@@ -52,7 +52,7 @@ TEST(VideosTest, MostrarInfoFiltrada_Pelicula) {
     Videos* pelicula = new Pelicula(311, "Filter Test", "Horror", 1.8, 4.3);
     
     testing::internal::CaptureStdout();
-    pelicula->mostrarInfoFiltrada(4.3, 4.0);
+    pelicula->MostrarInfoFiltrada(4.3, 4.0);
     std::string output = testing::internal::GetCapturedStdout();
     
     EXPECT_NE(output.find("Nombre: Filter Test"), std::string::npos);
@@ -65,7 +65,7 @@ TEST(VideosTest, FiltrarPorGenero_Drama_Serie) {
     Videos* serie = new Serie(309, "Drama Series", 4.2, "Drama", 1.0, 4);
     
     testing::internal::CaptureStdout();
-    serie->filtrarPorGenero("Drama");
+    serie->FiltrarPorGenero("Drama");
     std::string output = testing::internal::GetCapturedStdout();
     
     EXPECT_NE(output.find("Nombre: Drama Series"), std::string::npos);
@@ -78,7 +78,7 @@ TEST(VideosTest, FiltrarPorGenero_Drama_Pelicula) {
     Videos* pelicula = new Pelicula(308, "Drama Movie", "Drama", 2.0, 4.5);
     
     testing::internal::CaptureStdout();
-    pelicula->filtrarPorGenero("Drama");
+    pelicula->FiltrarPorGenero("Drama");
     std::string output = testing::internal::GetCapturedStdout();
     
     EXPECT_NE(output.find("Nombre: Drama Movie"), std::string::npos);
@@ -91,8 +91,8 @@ TEST(VideosTest, AgregarCalificacion_Multiple) {
     Videos* video = new Pelicula(307, "Multi Test", "Sci-Fi", 2.2, 2.0);
     std::ostringstream archivo;
     
-    video->agregarCalificacion(4.0, archivo); // (2.0 + 4.0) / 2 = 3.0
-    video->agregarCalificacion(6.0, archivo); // (3.0 + 6.0) / 2 = 4.5
+    video->AgregarCalificacion(4.0, archivo); // (2.0 + 4.0) / 2 = 3.0
+    video->AgregarCalificacion(6.0, archivo); // (3.0 + 6.0) / 2 = 4.5
     
     EXPECT_DOUBLE_EQ(video->ObtenerCalificacion(), 4.5);
     
@@ -128,8 +128,8 @@ TEST(VideosTest, GuardarEnArchivo_Polimorfismo) {
     
     std::ostringstream archivoPeli, archivoSerie;
     
-    pelicula->guardarEnArchivo(archivoPeli);
-    serie->guardarEnArchivo(archivoSerie);
+    pelicula->GuardarEnArchivo(archivoPeli);
+    serie->GuardarEnArchivo(archivoSerie);
     
     std::string contenidoPeli = archivoPeli.str();
     std::string contenidoSerie = archivoSerie.str();
@@ -151,7 +151,7 @@ TEST(VideosTest, MostrarInfoFiltrada_Serie) {
     Videos* serie = new Serie(312, "Serie Filter", 4.6, "Thriller", 1.2, 6);
     
     testing::internal::CaptureStdout();
-    serie->mostrarInfoFiltrada(4.6, 4.0);
+    serie->MostrarInfoFiltrada(4.6, 4.0);
     std::string output = testing::internal::GetCapturedStdout();
     
     EXPECT_NE(output.find("Nombre: Serie Filter"), std::string::npos);
@@ -170,7 +170,7 @@ TEST(VideosTest, AgregarCalificacion) {
     std::ostringstream archivo;
     Videos video(1, "Titanic", "Romance", 3.2, 4.0);
     
-    video.agregarCalificacion(5.0, archivo);
+    video.AgregarCalificacion(5.0, archivo);
     EXPECT_DOUBLE_EQ(video.ObtenerCalificacion(), 4.5); // (4.0 + 5.0) / 2
 }
 
@@ -179,7 +179,7 @@ TEST(VideosTest, MostrarInfoFiltrada_Mayor) {
     std::streambuf* old = std::cout.rdbuf(buffer.rdbuf());
     
     Videos video(123, "Avengers", "Acción", 2.5, 4.8);
-    video.mostrarInfoFiltrada(4.8, 4.5); // calif > c
+    video.MostrarInfoFiltrada(4.8, 4.5); // calif > c
     
     std::cout.rdbuf(old);
     
@@ -195,7 +195,7 @@ TEST(VideosTest, MostrarInfoFiltrada_Menor) {
     std::streambuf* old = std::cout.rdbuf(buffer.rdbuf());
     
     Videos video(456, "Batman", "Acción", 2.2, 3.5);
-    video.mostrarInfoFiltrada(3.5, 4.0);
+    video.MostrarInfoFiltrada(3.5, 4.0);
     
     std::cout.rdbuf(old);
     
@@ -208,7 +208,7 @@ TEST(VideosTest, FiltrarPorGenero_Drama) {
     std::streambuf* old = std::cout.rdbuf(buffer.rdbuf());
     
     Videos video(789, "Forrest Gump", "Drama", 2.3, 4.9);
-    video.filtrarPorGenero("Drama");
+    video.FiltrarPorGenero("Drama");
     
     std::cout.rdbuf(old);
     

@@ -18,21 +18,21 @@ Videos::~Videos() = default;
 double Videos::ObtenerCalificacion() { return calificacion; }
 string Videos::ObtenerTitulo(){return nombre;}
 
-void Videos::guardarEnArchivo(ostream &archivo){}
+void Videos::GuardarEnArchivo(ostream &archivo){}
 
-void Videos::mostrarInfoFiltrada(double calif, double c){
+void Videos::MostrarInfoFiltrada(double calif, double c){
     if (calif > c) {
         cout << "Nombre: " << nombre << ". Género: " << genero << ". ID: " << id << endl << ". Calificación: " << calif << endl;
     }
 }
 
-void Videos::filtrarPorGenero(string genero){
+void Videos::FiltrarPorGenero(string genero){
     if(genero == "Drama"){
         cout << "Nombre: " << nombre << ". Género: " << genero << ". ID: " << id << endl << ". Calificación: " << calificacion << endl;
     }
 }
 
-void Videos::agregarCalificacion(double nuevaCalificacion, ostream& archivo){
+void Videos::AgregarCalificacion(double nuevaCalificacion, ostream& archivo){
     calificacion = (calificacion + nuevaCalificacion) / 2;
 }
 

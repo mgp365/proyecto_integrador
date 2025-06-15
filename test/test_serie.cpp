@@ -26,7 +26,7 @@ TEST(SerieTest, ObtenerSerie) {
 TEST(SerieTest, GuardarEnArchivo) {
     Serie serie(205, "The Office", 4.1, "Comedia", 0.5, 9);
     std::ostringstream archivo;
-    serie.guardarEnArchivo(archivo);
+    serie.GuardarEnArchivo(archivo);
     std::string contenido = archivo.str();
     
     EXPECT_NE(contenido.find("205"), std::string::npos);
@@ -40,7 +40,7 @@ TEST(SerieTest, GuardarEnArchivo) {
 TEST(SerieTest, MostrarInfoFiltrada_CalificacionMayor) {
     Serie serie(206, "Breaking Bad", 4.9, "Drama", 1.0, 5);
     testing::internal::CaptureStdout();
-    serie.mostrarInfoFiltrada(4.9, 4.5);
+    serie.MostrarInfoFiltrada(4.9, 4.5);
     std::string output = testing::internal::GetCapturedStdout();
     
     EXPECT_NE(output.find("Nombre: Breaking Bad"), std::string::npos);
@@ -53,7 +53,7 @@ TEST(SerieTest, MostrarInfoFiltrada_CalificacionMayor) {
 TEST(SerieTest, MostrarInfoFiltrada_CalificacionMenor) {
     Serie serie(207, "Serie Baja", 3.5, "Drama", 1.0, 2);
     testing::internal::CaptureStdout();
-    serie.mostrarInfoFiltrada(3.5, 4.0);
+    serie.MostrarInfoFiltrada(3.5, 4.0);
     std::string output = testing::internal::GetCapturedStdout();
     EXPECT_TRUE(output.empty());
 }
@@ -74,7 +74,7 @@ TEST(SerieTest, OperadorSalida) {
 TEST(SerieTest, AgregarCalificacion) {
     Serie serie(210, "Test Serie", 4.0, "Drama", 1.0, 1);
     std::ostringstream archivo;
-    serie.agregarCalificacion(6.0, archivo);
+    serie.AgregarCalificacion(6.0, archivo);
     EXPECT_DOUBLE_EQ(serie.ObtenerCalificacion(), 5.0); // (4.0 + 6.0) / 2
 }
 
@@ -91,7 +91,7 @@ TEST(SerieTest, EpisodiosNegativos) {
 TEST(SerieTest, MostrarInfoFiltrada_CalificacionIgual) {
     Serie serie(208, "Serie Igual", 4.0, "Acción", 1.2, 6);
     testing::internal::CaptureStdout();
-    serie.mostrarInfoFiltrada(4.0, 4.0);
+    serie.MostrarInfoFiltrada(4.0, 4.0);
     std::string output = testing::internal::GetCapturedStdout();
     EXPECT_TRUE(output.empty());
 }

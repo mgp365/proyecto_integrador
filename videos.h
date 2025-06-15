@@ -74,19 +74,19 @@ class Videos{
      * 
      * @return salida a guardar
      */
-    virtual void guardarEnArchivo(ostream &archivo);
+    virtual void GuardarEnArchivo(ostream &archivo);
     /**
      * @brief Agrega una nueva calificación y su cálculo
      */
-    virtual void agregarCalificacion(double nuevaCalificacion, ostream& archivo);
+    virtual void AgregarCalificacion(double nuevaCalificacion, ostream& archivo);
     /**
      * @brief Muestra información filtrada por filtro propuesto
      */
-    virtual void mostrarInfoFiltrada(double calif, double c);
+    virtual void MostrarInfoFiltrada(double calif, double c);
     /**
      * @brief Muestra información filtrada por filtro de género
      */
-    virtual void filtrarPorGenero(string genero);
+    virtual void FiltrarPorGenero(string genero);
     /**
      * @brief Obtiene título del video
      */

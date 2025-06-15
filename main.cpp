@@ -95,14 +95,14 @@ int main() {
                     cout << "Mostrar videos con calificación mayor a: ";
                     cin >> filtroVideos;
                     for (Videos* vid : listaVideos) {
-                        vid->mostrarInfoFiltrada(vid->ObtenerCalificacion(), filtroVideos);
+                        vid->MostrarInfoFiltrada(vid->ObtenerCalificacion(), filtroVideos);
                     } break;
                 } else if(seleccionar == 2){
                     string filtroGenero;
                     cout << "Mostrar videos con género: ";
                     cin >> filtroGenero;
                     for (Videos* vid : listaVideos) {
-                        vid->filtrarPorGenero(filtroGenero);
+                        vid->FiltrarPorGenero(filtroGenero);
                     } break;
                 } else{cout << "Seleccione una opción válida" << endl; break;}
             case 3: {
@@ -118,7 +118,7 @@ int main() {
 
                 for (Serie* ser : listaSeries) {
                     if (ser->ObtenerSerie() == filtroSerie) {
-                        ser->mostrarInfoFiltrada(ser -> ObtenerCalificacion(),filtroEpisodio);
+                        ser->MostrarInfoFiltrada(ser -> ObtenerCalificacion(),filtroEpisodio);
                     }
                 }
                 break;
@@ -129,7 +129,7 @@ int main() {
                 cout << "Mostrar películas con calificación mayor a: ";
                 cin >> filtroPelicula;
                 for (Pelicula* pel : listaPeliculas) {
-                    pel->mostrarInfoFiltrada(pel->ObtenerCalificacion(), filtroPelicula);
+                    pel->MostrarInfoFiltrada(pel->ObtenerCalificacion(), filtroPelicula);
                 }
                 break;
                 //calificar un video (pedir título a calificar y valor otorgado)
@@ -151,7 +151,7 @@ int main() {
                         if (vid->ObtenerTitulo() == titulo) {
                             cout << "¿Cómo califica esta película del 1 al 5?: ";
                             cin >> puntuacion;
-                            vid->agregarCalificacion(puntuacion, archivo);
+                            vid->AgregarCalificacion(puntuacion, archivo);
                             cout << *vid << endl;
                             cout << "La calificación promedio se ha actualizado." << endl;
                             break;
@@ -166,7 +166,7 @@ int main() {
                         if (ser->ObtenerTitulo() == titulo && ser->ObtenerEpisodio() == numEpisodio) {
                             cout << "¿Cómo califica este episodio del 1 al 5?: ";
                             cin >> puntuacion;
-                            ser->agregarCalificacion(puntuacion, archivo);
+                            ser->AgregarCalificacion(puntuacion, archivo);
                             cout << *ser << endl;
                             cout << "La calificación promedio del episodio se ha actualizado." << endl;
                             break;

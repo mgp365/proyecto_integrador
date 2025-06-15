@@ -25,8 +25,8 @@ class Pelicula : public Videos {
      */
     Pelicula(int id, const string& nombre, const string& genero, float duracion, double calificacion);
     double ObtenerCalificacion() override;
-    void guardarEnArchivo(ostream &archivo) override;
-    void mostrarInfoFiltrada(double calif, double c) override;
+    void GuardarEnArchivo(ostream &archivo) override;
+    void MostrarInfoFiltrada(double calif, double c) override;
 
     /**
      * @brief Destructor de la clase Pelicula

@@ -14,7 +14,7 @@ Pelicula::Pelicula(int id, const string& nombre, const string& genero, float dur
 
 Pelicula::~Pelicula() = default;
 
-void Pelicula::guardarEnArchivo(ostream &archivo){
+void Pelicula::GuardarEnArchivo(ostream &archivo){
     archivo << id << "," << nombre << "," << genero << "," << duracion << "," << calificacion << endl;
 }
 
@@ -22,7 +22,7 @@ double Pelicula::ObtenerCalificacion(){
     return calificacion;
 }
 
-void Pelicula::mostrarInfoFiltrada(double calif, double c){
+void Pelicula::MostrarInfoFiltrada(double calif, double c){
     if (calif > c) {
         cout << "Nombre: " << nombre << ". Género: " << genero << ". ID: " << id << endl << ". Calificación: " << calif << endl;
     }

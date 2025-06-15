@@ -21,7 +21,7 @@ TEST(PeliculaTest, ObtenerTitulo) {
 TEST(PeliculaTest, MostrarInfoFiltrada_CalificacionMayor) {
     Pelicula peli(102, "Drama", "Drama", 2.0, 4.2);
     testing::internal::CaptureStdout();
-    peli.mostrarInfoFiltrada(4.2, 4.0);
+    peli.MostrarInfoFiltrada(4.2, 4.0);
     std::string output = testing::internal::GetCapturedStdout();
     EXPECT_NE(output.find("Nombre: Drama"), std::string::npos);
     EXPECT_NE(output.find("Género: Drama"), std::string::npos);
@@ -31,7 +31,7 @@ TEST(PeliculaTest, MostrarInfoFiltrada_CalificacionMayor) {
 TEST(PeliculaTest, MostrarInfoFiltrada_CalificacionMenor) {
     Pelicula peli(104, "Comedia", "Comedia", 1.5, 3.0);
     testing::internal::CaptureStdout();
-    peli.mostrarInfoFiltrada(3.0, 4.0);
+    peli.MostrarInfoFiltrada(3.0, 4.0);
     std::string output = testing::internal::GetCapturedStdout();
     EXPECT_TRUE(output.empty());
 }
@@ -39,7 +39,7 @@ TEST(PeliculaTest, MostrarInfoFiltrada_CalificacionMenor) {
 TEST(PeliculaTest, GuardarEnArchivo) {
     Pelicula peli(103, "Avatar", "Sci-Fi", 3.2, 4.6);
     std::ostringstream archivo;
-    peli.guardarEnArchivo(archivo);
+    peli.GuardarEnArchivo(archivo);
     std::string contenido = archivo.str();
     
     EXPECT_NE(contenido.find("103"), std::string::npos);
@@ -52,7 +52,7 @@ TEST(PeliculaTest, GuardarEnArchivo) {
 TEST(PeliculaTest, FiltrarPorGenero_Drama) {
     Pelicula peli(108, "Película Drama", "Drama", 2.5, 4.3);
     testing::internal::CaptureStdout();
-    peli.filtrarPorGenero("Drama");
+    peli.FiltrarPorGenero("Drama");
     std::string output = testing::internal::GetCapturedStdout();
     EXPECT_NE(output.find("Nombre: Película Drama"), std::string::npos);
 }

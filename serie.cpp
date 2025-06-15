@@ -13,7 +13,7 @@ Serie::Serie(int id, const string& nombre, double calificacion, const string& ge
 
 Serie::~Serie() = default;
 
-void Serie::guardarEnArchivo(ostream &archivo){
+void Serie::GuardarEnArchivo(ostream &archivo){
     archivo << id << "," << nombre << "," << episodio << "," << genero << "," << duracion << "," << calificacion << endl;
 }
 
@@ -21,7 +21,7 @@ double Serie::ObtenerCalificacion(){
     return calificacion;
 }
 
-void Serie::mostrarInfoFiltrada(double calif, double c){
+void Serie::MostrarInfoFiltrada(double calif, double c){
     if (calif > c) {
         cout << "Nombre: " << nombre << ". Número de episodio: " << episodio << ". Género: " << genero << ". ID: " << id << ". Calificación: " << calif << endl;
     }

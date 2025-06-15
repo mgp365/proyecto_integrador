@@ -30,11 +30,11 @@ class Serie : public Videos {
     /**
      * @brief Guardar datos en el archivo
      */
-    void guardarEnArchivo(ostream &archivo) override;
+    void GuardarEnArchivo(ostream &archivo) override;
     /**
      * @brief Mostrar información filtrada por calificación
      */
-    void mostrarInfoFiltrada(double calif, double c) override;
+    void MostrarInfoFiltrada(double calif, double c) override;
     /**
      * @brief Obtener serie
      */
