@@ -9,6 +9,7 @@ class Pelicula : public Videos {
     double obtenerCalificacion() override;
     void guardarEnArchivo(ostream &archivo) override;
     void mostrarInfoFiltrada(double calif, double c) override;
+    ~Pelicula();
 };
 
 #endif
