@@ -1,16 +1,13 @@
-/**
- * @file series.h
- * @brief Header file for video processing functions.
- * 
- * This file contains declarations for functions used to load, play, and stop videos.
- * 
- * @author Mariana Guerrero Pérez
- * @date 2024
- * @copyright (c) 2024 Mariana Guerrero Pérez, Tecnológico de Monterrey
- */
-
 #ifndef SERIE_H
 #define SERIE_H
+
+/*
+ * Copyright (C) 2025 Tec de Monterrey
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
 
 #include "videos.h"
 
