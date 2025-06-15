@@ -5,6 +5,8 @@ using namespace std;
 Pelicula::Pelicula(int id, const string& nombre, const string& genero, float duracion, double calificacion)
     : Videos(id, nombre, genero, duracion, calificacion){}
 
+Pelicula::~Pelicula() = default;
+
 void Pelicula::guardarEnArchivo(ostream &archivo){
     archivo << id << "," << nombre << "," << genero << "," << duracion << "," << calificacion << endl;
 }
