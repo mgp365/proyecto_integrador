@@ -3,24 +3,24 @@
 
 TEST(SerieTest, Constructor) {
     Serie serie(201, "Breaking Bad", 4.9, "Drama", 1.0, 5);
-    EXPECT_EQ(serie.obtenerTitulo(), "Breaking Bad");
-    EXPECT_DOUBLE_EQ(serie.obtenerCalificacion(), 4.9);
-    EXPECT_EQ(serie.obtenerEpisodio(), 5);
+    EXPECT_EQ(serie.ObtenerTitulo(), "Breaking Bad");
+    EXPECT_DOUBLE_EQ(serie.ObtenerCalificacion(), 4.9);
+    EXPECT_EQ(serie.ObtenerEpisodio(), 5);
 }
 
 TEST(SerieTest, ObtenerCalificacion) {
     Serie serie(201, "Breaking Bad", 4.9, "Drama", 1.0, 5);
-    EXPECT_DOUBLE_EQ(serie.obtenerCalificacion(), 4.9);
+    EXPECT_DOUBLE_EQ(serie.ObtenerCalificacion(), 4.9);
 }
 
 TEST(SerieTest, ObtenerEpisodio) {
     Serie serie(202, "Friends", 4.2, "Comedia", 0.5, 10);
-    EXPECT_EQ(serie.obtenerEpisodio(), 10);
+    EXPECT_EQ(serie.ObtenerEpisodio(), 10);
 }
 
 TEST(SerieTest, ObtenerSerie) {
     Serie serie(203, "Game of Thrones", 4.7, "Fantasía", 1.2, 8);
-    EXPECT_EQ(serie.obtenerSerie(), "Game of Thrones");
+    EXPECT_EQ(serie.ObtenerSerie(), "Game of Thrones");
 }
 
 TEST(SerieTest, GuardarEnArchivo) {
@@ -75,17 +75,17 @@ TEST(SerieTest, AgregarCalificacion) {
     Serie serie(210, "Test Serie", 4.0, "Drama", 1.0, 1);
     std::ostringstream archivo;
     serie.agregarCalificacion(6.0, archivo);
-    EXPECT_DOUBLE_EQ(serie.obtenerCalificacion(), 5.0); // (4.0 + 6.0) / 2
+    EXPECT_DOUBLE_EQ(serie.ObtenerCalificacion(), 5.0); // (4.0 + 6.0) / 2
 }
 
 TEST(SerieTest, EpisodiosCero) {
     Serie serie(213, "Nueva Serie", 3.8, "Sci-Fi", 1.5, 0);
-    EXPECT_EQ(serie.obtenerEpisodio(), 0);
+    EXPECT_EQ(serie.ObtenerEpisodio(), 0);
 }
 
 TEST(SerieTest, EpisodiosNegativos) {
     Serie serie(214, "Serie Negativa", 4.0, "Horror", 1.0, -1);
-    EXPECT_EQ(serie.obtenerEpisodio(), -1);
+    EXPECT_EQ(serie.ObtenerEpisodio(), -1);
 }
 
 TEST(SerieTest, MostrarInfoFiltrada_CalificacionIgual) {

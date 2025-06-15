@@ -8,8 +8,8 @@ TEST(VideosTest, PolimorfismoObtenerCalificacion) {
     Videos* pelicula = new Pelicula(301, "Test Movie", "Acción", 2.0, 4.0);
     Videos* serie = new Serie(302, "Test Series", 3.5, "Thriller", 1.5, 3);
     
-    EXPECT_DOUBLE_EQ(pelicula->obtenerCalificacion(), 4.0);
-    EXPECT_DOUBLE_EQ(serie->obtenerCalificacion(), 3.5);
+    EXPECT_DOUBLE_EQ(pelicula->ObtenerCalificacion(), 4.0);
+    EXPECT_DOUBLE_EQ(serie->ObtenerCalificacion(), 3.5);
     
     delete pelicula;
     delete serie;
@@ -19,8 +19,8 @@ TEST(VideosTest, PolimorfismoObtenerTitulo) {
     Videos* pelicula = new Pelicula(303, "Película Test", "Drama", 2.5, 4.2);
     Videos* serie = new Serie(304, "Serie Test", 4.1, "Comedia", 1.0, 5);
     
-    EXPECT_EQ(pelicula->obtenerTitulo(), "Película Test");
-    EXPECT_EQ(serie->obtenerTitulo(), "Serie Test");
+    EXPECT_EQ(pelicula->ObtenerTitulo(), "Película Test");
+    EXPECT_EQ(serie->ObtenerTitulo(), "Serie Test");
     
     delete pelicula;
     delete serie;
@@ -31,7 +31,7 @@ TEST(VideosTest, AgregarCalificacion_Pelicula) {
     std::ostringstream archivo;
     
     pelicula->agregarCalificacion(6.0, archivo);
-    EXPECT_DOUBLE_EQ(pelicula->obtenerCalificacion(), 5.0); // (4.0 + 6.0) / 2
+    EXPECT_DOUBLE_EQ(pelicula->ObtenerCalificacion(), 5.0); // (4.0 + 6.0) / 2
     
     delete pelicula;
 }
@@ -94,7 +94,7 @@ TEST(VideosTest, AgregarCalificacion_Multiple) {
     video->agregarCalificacion(4.0, archivo); // (2.0 + 4.0) / 2 = 3.0
     video->agregarCalificacion(6.0, archivo); // (3.0 + 6.0) / 2 = 4.5
     
-    EXPECT_DOUBLE_EQ(video->obtenerCalificacion(), 4.5);
+    EXPECT_DOUBLE_EQ(video->ObtenerCalificacion(), 4.5);
     
     delete video;
 }
@@ -162,8 +162,8 @@ TEST(VideosTest, MostrarInfoFiltrada_Serie) {
 
 TEST(VideosTest, Constructor) {
     Videos video(101, "Avatar", "Acción", 2.5, 4.8);
-    EXPECT_EQ(video.obtenerTitulo(), "Avatar");
-    EXPECT_DOUBLE_EQ(video.obtenerCalificacion(), 4.8);
+    EXPECT_EQ(video.ObtenerTitulo(), "Avatar");
+    EXPECT_DOUBLE_EQ(video.ObtenerCalificacion(), 4.8);
 }
 
 TEST(VideosTest, AgregarCalificacion) {
@@ -171,7 +171,7 @@ TEST(VideosTest, AgregarCalificacion) {
     Videos video(1, "Titanic", "Romance", 3.2, 4.0);
     
     video.agregarCalificacion(5.0, archivo);
-    EXPECT_DOUBLE_EQ(video.obtenerCalificacion(), 4.5); // (4.0 + 5.0) / 2
+    EXPECT_DOUBLE_EQ(video.ObtenerCalificacion(), 4.5); // (4.0 + 5.0) / 2
 }
 
 TEST(VideosTest, MostrarInfoFiltrada_Mayor) {
