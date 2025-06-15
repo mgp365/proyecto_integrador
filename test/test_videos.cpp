@@ -63,3 +63,28 @@ TEST(VideosTest, MostrarInfoFiltrada_Pelicula) {
     
     delete pelicula;
 }
+
+TEST(VideosTest, FiltrarPorGenero_NoCoincide) {
+    Videos* pelicula = new Pelicula(310, "Acción Movie", "Acción", 2.0, 4.1);
+    
+    testing::internal::CaptureStdout();
+    pelicula->filtrarPorGenero("Drama");
+    std::string output = testing::internal::GetCapturedStdout();
+    
+    EXPECT_TRUE(output.empty());
+    
+    delete pelicula;
+}
+
+TEST(VideosTest, FiltrarPorGenero_Drama_Serie) {
+    Videos* serie = new Serie(309, "Drama Series", 4.2, "Drama", 1.0, 4);
+    
+    testing::internal::CaptureStdout();
+    serie->filtrarPorGenero("Drama");
+    std::string output = testing::internal::GetCapturedStdout();
+    
+    EXPECT_NE(output.find("Nombre: Drama Series"), std::string::npos);
+    EXPECT_NE(output.find("Género: Drama"), std::string::npos);
+    
+    delete serie;
+}
