@@ -17,3 +17,12 @@ TEST(PeliculaTest, ObtenerTitulo) {
     EXPECT_EQ(peli.obtenerTitulo(), "El Padrino");
 }
 
+TEST(PeliculaTest, MostrarInfoFiltrada_CalificacionMayor) {
+    Pelicula peli(102, "Drama", "Drama", 2.0, 4.2);
+    testing::internal::CaptureStdout();
+    peli.mostrarInfoFiltrada(4.2, 4.0);
+    std::string output = testing::internal::GetCapturedStdout();
+    EXPECT_NE(output.find("Nombre: Drama"), std::string::npos);
+    EXPECT_NE(output.find("Género: Drama"), std::string::npos);
+    EXPECT_NE(output.find("ID: 102"), std::string::npos);
+}
