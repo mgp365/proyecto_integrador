@@ -5,6 +5,8 @@ using namespace std;
 Serie::Serie(int id, const string& nombre, double calificacion, const string& genero, float duracion,int episodio)
     : Videos(id, nombre, genero, duracion, calificacion), episodio(episodio) {}
 
+Serie::~Serie() = default;
+
 void Serie::guardarEnArchivo(ostream &archivo){
     archivo << id << "," << nombre << "," << episodio << "," << genero << "," << duracion << "," << calificacion << endl;
 }
