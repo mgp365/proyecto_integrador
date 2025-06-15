@@ -59,12 +59,21 @@ if(ENABLE_TESTING)
 
     # Archivos de pruebas
     # Tests con GTest
-         add_test_executable(test_pelicula1
+        ## add_test_executable(test_pelicula1
+        #    test/test_pelicula1.cpp
+        #    pelicula.cpp
+        #    #serie.cpp
+        #    videos.cpp
+        #)
+
+        # Reemplaza la parte de add_test_executable con esto:
+        add_executable(test_pelicula1 
             test/test_pelicula1.cpp
             pelicula.cpp
-            #serie.cpp
             videos.cpp
         )
+        target_link_libraries(test_pelicula1 PRIVATE gtest gtest_main)
+        add_test(NAME test_pelicula1 COMMAND test_pelicula1)
 
     # Generar reportes de cobertura
     if (ENABLE_COVERAGE)
