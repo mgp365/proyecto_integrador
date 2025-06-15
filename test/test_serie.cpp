@@ -77,3 +77,8 @@ TEST(SerieTest, AgregarCalificacion) {
     serie.agregarCalificacion(6.0, archivo);
     EXPECT_DOUBLE_EQ(serie.obtenerCalificacion(), 5.0); // (4.0 + 6.0) / 2
 }
+
+TEST(SerieTest, EpisodiosCero) {
+    Serie serie(213, "Nueva Serie", 3.8, "Sci-Fi", 1.5, 0);
+    EXPECT_EQ(serie.obtenerEpisodio(), 0);
+}
