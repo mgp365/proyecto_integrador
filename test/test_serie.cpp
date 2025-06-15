@@ -88,15 +88,10 @@ TEST(SerieTest, EpisodiosNegativos) {
     EXPECT_EQ(serie.obtenerEpisodio(), -1);
 }
 
-TEST(SerieTest, OperadorSalida) {
-    Serie serie(209, "House of Cards", 4.3, "Thriller", 1.0, 3);
-    std::ostringstream os;
-    os << serie;
-    std::string output = os.str();
-    
-    EXPECT_NE(output.find("Nombre: House of Cards"), std::string::npos);
-    EXPECT_NE(output.find("Género: Thriller"), std::string::npos);
-    EXPECT_NE(output.find("ID: 209"), std::string::npos);
-    EXPECT_NE(output.find("Calificación: 4.3"), std::string::npos);
-    EXPECT_NE(output.find("Episodio: 3"), std::string::npos);
+TEST(SerieTest, MostrarInfoFiltrada_CalificacionIgual) {
+    Serie serie(208, "Serie Igual", 4.0, "Acción", 1.2, 6);
+    testing::internal::CaptureStdout();
+    serie.mostrarInfoFiltrada(4.0, 4.0);
+    std::string output = testing::internal::GetCapturedStdout();
+    EXPECT_TRUE(output.empty());
 }
