@@ -1,4 +1,5 @@
 #include <gtest/gtest.h>
+#include <sstream>
 #include "pelicula.h"
 
 TEST(PeliculaTest, Constructor) {
@@ -33,4 +34,17 @@ TEST(PeliculaTest, MostrarInfoFiltrada_CalificacionMenor) {
     peli.mostrarInfoFiltrada(3.0, 4.0);
     std::string output = testing::internal::GetCapturedStdout();
     EXPECT_TRUE(output.empty());
+}
+
+TEST(PeliculaTest, GuardarEnArchivo) {
+    Pelicula peli(103, "Avatar", "Sci-Fi", 3.2, 4.6);
+    std::ostringstream archivo;
+    peli.guardarEnArchivo(archivo);
+    std::string contenido = archivo.str();
+    
+    EXPECT_NE(contenido.find("103"), std::string::npos);
+    EXPECT_NE(contenido.find("Avatar"), std::string::npos);
+    EXPECT_NE(contenido.find("Sci-Fi"), std::string::npos);
+    EXPECT_NE(contenido.find("3.2"), std::string::npos);
+    EXPECT_NE(contenido.find("4.6"), std::string::npos);
 }
