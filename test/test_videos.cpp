@@ -76,3 +76,28 @@ TEST(VideosTest, FiltrarPorGenero_Drama_Serie) {
     
     delete serie;
 }
+
+TEST(VideosTest, FiltrarPorGenero_Drama_Pelicula) {
+    Videos* pelicula = new Pelicula(308, "Drama Movie", "Drama", 2.0, 4.5);
+    
+    testing::internal::CaptureStdout();
+    pelicula->filtrarPorGenero("Drama");
+    std::string output = testing::internal::GetCapturedStdout();
+    
+    EXPECT_NE(output.find("Nombre: Drama Movie"), std::string::npos);
+    EXPECT_NE(output.find("Género: Drama"), std::string::npos);
+    
+    delete pelicula;
+}
+
+TEST(VideosTest, AgregarCalificacion_Multiple) {
+    Videos* video = new Pelicula(307, "Multi Test", "Sci-Fi", 2.2, 2.0);
+    std::ostringstream archivo;
+    
+    video->agregarCalificacion(4.0, archivo); // (2.0 + 4.0) / 2 = 3.0
+    video->agregarCalificacion(6.0, archivo); // (3.0 + 6.0) / 2 = 4.5
+    
+    EXPECT_DOUBLE_EQ(video->obtenerCalificacion(), 4.5);
+    
+    delete video;
+}
