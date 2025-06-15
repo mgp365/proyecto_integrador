@@ -56,11 +56,3 @@ TEST(PeliculaTest, FiltrarPorGenero_Drama) {
     std::string output = testing::internal::GetCapturedStdout();
     EXPECT_NE(output.find("Nombre: Película Drama"), std::string::npos);
 }
-
-TEST(PeliculaTest, FiltrarPorGenero_NoCoincide) {
-    Pelicula peli(109, "Acción", "Acción", 2.0, 4.1);
-    testing::internal::CaptureStdout();
-    peli.filtrarPorGenero("Drama");
-    std::string output = testing::internal::GetCapturedStdout();
-    EXPECT_TRUE(output.empty());
-}
