@@ -23,9 +23,25 @@ using namespace std;
 
 class Videos{
     protected:
+    /*
+     * ID del video
+     */
     int id;
-    string nombre, genero;
+    /*
+     * Nombre del título
+     */
+    string nombre;
+    /*
+     * Género del título
+     */
+    string genero;
+    /*
+     * Duración en minutos
+     */
     float duracion;
+    /*
+     * Calificación promedio
+     */
     double calificacion;
     public:
     /**
