@@ -5,6 +5,8 @@ using namespace std;
 Videos::Videos(int id, const string& nombre, const string& genero, float duracion, double calificacion)
     : id(id), nombre(nombre), genero(genero), duracion(duracion), calificacion(calificacion) {}
 
+Videos::~Videos() = default;
+
 // videos.h
 double Videos::obtenerCalificacion() { return calificacion; }
 string Videos::obtenerTitulo(){return nombre;}
